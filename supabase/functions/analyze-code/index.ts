@@ -25,6 +25,8 @@ serve(async (req) => {
 2. Analyze time and space complexity for each translation
 3. Provide brief explanations of the code logic
 4. Suggest optimizations where applicable
+5. Identify real-world applications for this code
+6. Generate test cases (basic and edge cases)
 
 Return your response in this EXACT JSON format:
 {
@@ -41,7 +43,16 @@ Return your response in this EXACT JSON format:
     "time": "O(n)",
     "space": "O(1)"
   },
-  "suggestions": ["Optimization suggestion 1", "Optimization suggestion 2"]
+  "suggestions": ["Optimization suggestion 1", "Optimization suggestion 2"],
+  "applications": ["Application 1", "Application 2", "Application 3"],
+  "testCases": {
+    "basic": [
+      { "input": "example input", "expected": "expected output", "description": "what this tests" }
+    ],
+    "edge": [
+      { "input": "edge case input", "expected": "expected output", "description": "what this tests" }
+    ]
+  }
 }`;
 
     const userPrompt = `Analyze and translate this ${sourceLanguage} code:\n\`\`\`${sourceLanguage}\n${code}\n\`\`\`\n\nTranslate it to: ${targetLanguages.join(', ')}`;

@@ -136,6 +136,8 @@ const Index = () => {
                 translations={results.translations}
                 originalComplexity={results.originalComplexity}
                 suggestions={results.suggestions}
+                applications={results.applications}
+                testCases={results.testCases}
               />
             ) : (
               <div className="h-full flex items-center justify-center">
