@@ -5,7 +5,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-serve(async (req) => {
+serve(async (req: { method: string; json: () => PromiseLike<{ code: any; sourceLanguage: any; targetLanguages: any; }> | { code: any; sourceLanguage: any; targetLanguages: any; }; }) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
