@@ -1,73 +1,25 @@
-# Welcome to your Lovable project
+ 			PolyCode Insight AI
+ 								-"One code, many languages, infinite possibilities."
 
-## Project info
 
-**URL**: https://lovable.dev/projects/e41b3373-2e87-4319-b8ad-14d0a86c125d
+PolyCode Insight AI for Code Understanding and Documentation
+A tool combining deep learning and symbolic reasoning to understand, explain, and generate code in multiple languages, analyze the code performance and provide efficient one , documentation for complex codebases, aiding developers in navigating and maintaining software projects.
 
-## How can I edit this code?
+in this app the user give input in one language like c then the ai convert the code into remaining languages the user want .and also provide the efficiency details of the code so that the user can able to pick the efficient code in terms of efficiency also[space and time complexity]and also there is another option where user can able to get the details like documentation , applications  [where the user use that code].
+and it shows the testcases ,hidden testcases and also suggest cases that code should pass.
 
-There are several ways of editing your application.
 
-**Use Lovable**
+Interactive Code Querying
+Enable developers to ask natural language questions about code functionality, dependencies, or logic flow, with the system providing clear, context-aware explanations.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e41b3373-2e87-4319-b8ad-14d0a86c125d) and start prompting.
+Automated Code Refactoring Suggestions
+Using symbolic reasoning combined with neural pattern recognition, provide suggestions for improving code quality, modularity, and performance.
 
-Changes made via Lovable will be committed automatically to this repo.
+Multi-Language Code Support
+Support understanding and documenting codebases involving multiple programming languages or mixed-language projects seamlessly.
 
-**Use your preferred IDE**
+Explainable AI Decisions
+Provide transparent explanations of how the AI derived conclusions about code behavior or documentation suggestions, enhancing developer trust.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/e41b3373-2e87-4319-b8ad-14d0a86c125d) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Bug and Vulnerability Explanation
+Identify potential bugs or security vulnerabilities and explain them in human-readable symbolic rules for easier debugging.
