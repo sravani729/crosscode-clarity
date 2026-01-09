@@ -142,9 +142,6 @@ const Index = () => {
             ) : (
               <div className="h-full flex items-center justify-center">
                 <div className="text-center space-y-4 max-w-md">
-                  <div className="w-20 h-20 mx-auto rounded-full bg-gradient-primary/10 flex items-center justify-center">
-                    <Sparkles className="w-10 h-10 text-primary" />
-                  </div>
                   <h3 className="text-xl font-semibold">Ready to Analyze</h3>
                   <p className="text-muted-foreground">
                     Enter your code, select target languages, and click "Analyze & Translate" to see AI-powered translations with complexity analysis.
