@@ -1,7 +1,6 @@
 import { TranslationResult } from "./TranslationResult";
-import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Lightbulb, Activity, Boxes, FlaskConical } from "lucide-react";
+import { Lightbulb, Boxes, FlaskConical } from "lucide-react";
 
 interface Translation {
   language: string;
@@ -19,143 +18,83 @@ interface TestCase {
 
 interface AnalysisResultsProps {
   translations: Translation[];
-  originalComplexity?: {
-    time: string;
-    space: string;
-  };
+  originalComplexity?: { time: string; space: string };
   suggestions?: string[];
   applications?: string[];
-  testCases?: {
-    basic: TestCase[];
-    edge: TestCase[];
-  };
+  testCases?: { basic: TestCase[]; edge: TestCase[] };
 }
 
 export const AnalysisResults = ({ translations, originalComplexity, suggestions, applications, testCases }: AnalysisResultsProps) => {
   return (
-    <div className="space-y-6">
-      <div className="flex items-center gap-3 mb-6">
-        <div className="p-2 rounded-lg bg-gradient-primary">
-          <Activity className="w-5 h-5 text-white" />
-        </div>
-        <div>
-          <h2 className="text-xl font-semibold">Analysis Results</h2>
-          <p className="text-sm text-muted-foreground">Code translations and complexity analysis</p>
-        </div>
-      </div>
+    <div className="space-y-5">
+      <h3 className="text-sm font-bold text-foreground border-b border-border pb-2">Analysis Output</h3>
 
       {originalComplexity && (
-        <Card className="p-4 bg-card border-border">
-          <h3 className="text-sm font-semibold mb-3">Original Code Complexity</h3>
+        <div className="p-3 bg-muted rounded border border-border">
+          <p className="text-xs font-bold text-foreground mb-2">Original Complexity</p>
           <div className="flex gap-2">
-            <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
-              Time: {originalComplexity.time}
-            </Badge>
-            <Badge variant="outline" className="bg-accent/10 text-accent border-accent/20">
-              Space: {originalComplexity.space}
-            </Badge>
+            <Badge variant="outline" className="text-xs">Time: {originalComplexity.time}</Badge>
+            <Badge variant="outline" className="text-xs">Space: {originalComplexity.space}</Badge>
           </div>
-        </Card>
+        </div>
       )}
 
       {suggestions && suggestions.length > 0 && (
-        <Card className="p-4 bg-card border-border shadow-glow">
-          <div className="flex items-center gap-2 mb-3">
-            <Lightbulb className="w-4 h-4 text-accent" />
-            <h3 className="text-sm font-semibold">Optimization Suggestions</h3>
+        <div className="p-3 bg-muted rounded border border-border">
+          <div className="flex items-center gap-1.5 mb-2">
+            <Lightbulb className="w-3.5 h-3.5 text-primary" />
+            <p className="text-xs font-bold text-foreground">Suggestions</p>
           </div>
-          <ul className="space-y-2">
-            {suggestions.map((suggestion, index) => (
-              <li key={index} className="text-sm text-muted-foreground flex gap-2">
-                <span className="text-accent">•</span>
-                <span>{suggestion}</span>
-              </li>
+          <ul className="space-y-1">
+            {suggestions.map((s, i) => (
+              <li key={i} className="text-xs text-muted-foreground">• {s}</li>
             ))}
           </ul>
-        </Card>
+        </div>
       )}
 
       {applications && applications.length > 0 && (
-        <Card className="p-4 bg-card border-border">
-          <div className="flex items-center gap-2 mb-3">
-            <Boxes className="w-4 h-4 text-primary" />
-            <h3 className="text-sm font-semibold">Real-World Applications</h3>
+        <div className="p-3 bg-muted rounded border border-border">
+          <div className="flex items-center gap-1.5 mb-2">
+            <Boxes className="w-3.5 h-3.5 text-primary" />
+            <p className="text-xs font-bold text-foreground">Applications</p>
           </div>
-          <ul className="space-y-2">
-            {applications.map((app, index) => (
-              <li key={index} className="text-sm text-muted-foreground flex gap-2">
-                <span className="text-primary">•</span>
-                <span>{app}</span>
-              </li>
+          <ul className="space-y-1">
+            {applications.map((a, i) => (
+              <li key={i} className="text-xs text-muted-foreground">• {a}</li>
             ))}
           </ul>
-        </Card>
+        </div>
       )}
 
       {testCases && (testCases.basic?.length > 0 || testCases.edge?.length > 0) && (
-        <Card className="p-4 bg-card border-border">
-          <div className="flex items-center gap-2 mb-3">
-            <FlaskConical className="w-4 h-4 text-accent" />
-            <h3 className="text-sm font-semibold">Test Cases</h3>
+        <div className="p-3 bg-muted rounded border border-border">
+          <div className="flex items-center gap-1.5 mb-2">
+            <FlaskConical className="w-3.5 h-3.5 text-primary" />
+            <p className="text-xs font-bold text-foreground">Test Cases</p>
           </div>
-          
-          {testCases.basic && testCases.basic.length > 0 && (
-            <div className="mb-4">
-              <h4 className="text-xs font-semibold text-muted-foreground mb-2 uppercase">Basic Tests</h4>
-              <div className="space-y-2">
-                {testCases.basic.map((test, index) => (
-                  <div key={index} className="p-3 rounded-lg bg-secondary/50 border border-border">
-                    <p className="text-xs text-muted-foreground mb-1">{test.description}</p>
-                    <div className="grid grid-cols-2 gap-2 mt-2">
-                      <div>
-                        <Badge variant="outline" className="text-xs mb-1">Input</Badge>
-                        <pre className="text-xs font-mono bg-code-bg p-2 rounded border border-code-border overflow-x-auto">
-                          {test.input}
-                        </pre>
-                      </div>
-                      <div>
-                        <Badge variant="outline" className="text-xs mb-1">Expected</Badge>
-                        <pre className="text-xs font-mono bg-code-bg p-2 rounded border border-code-border overflow-x-auto">
-                          {test.expected}
-                        </pre>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+          {testCases.basic?.map((t, i) => (
+            <div key={`b${i}`} className="mb-2 p-2 bg-card rounded border border-border">
+              <p className="text-[11px] text-muted-foreground mb-1">{t.description}</p>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div><span className="font-medium">Input:</span> <code className="bg-code-bg px-1 rounded">{t.input}</code></div>
+                <div><span className="font-medium">Expected:</span> <code className="bg-code-bg px-1 rounded">{t.expected}</code></div>
               </div>
             </div>
-          )}
-
-          {testCases.edge && testCases.edge.length > 0 && (
-            <div>
-              <h4 className="text-xs font-semibold text-muted-foreground mb-2 uppercase">Edge Cases</h4>
-              <div className="space-y-2">
-                {testCases.edge.map((test, index) => (
-                  <div key={index} className="p-3 rounded-lg bg-secondary/50 border border-border">
-                    <p className="text-xs text-muted-foreground mb-1">{test.description}</p>
-                    <div className="grid grid-cols-2 gap-2 mt-2">
-                      <div>
-                        <Badge variant="outline" className="text-xs mb-1">Input</Badge>
-                        <pre className="text-xs font-mono bg-code-bg p-2 rounded border border-code-border overflow-x-auto">
-                          {test.input}
-                        </pre>
-                      </div>
-                      <div>
-                        <Badge variant="outline" className="text-xs mb-1">Expected</Badge>
-                        <pre className="text-xs font-mono bg-code-bg p-2 rounded border border-code-border overflow-x-auto">
-                          {test.expected}
-                        </pre>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+          ))}
+          {testCases.edge?.map((t, i) => (
+            <div key={`e${i}`} className="mb-2 p-2 bg-card rounded border border-border">
+              <p className="text-[11px] text-muted-foreground mb-1">Edge: {t.description}</p>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div><span className="font-medium">Input:</span> <code className="bg-code-bg px-1 rounded">{t.input}</code></div>
+                <div><span className="font-medium">Expected:</span> <code className="bg-code-bg px-1 rounded">{t.expected}</code></div>
               </div>
             </div>
-          )}
-        </Card>
+          ))}
+        </div>
       )}
 
-      <div className="space-y-4">
+      <div className="space-y-3">
         {translations.map((translation, index) => (
           <TranslationResult key={index} translation={translation} />
         ))}
