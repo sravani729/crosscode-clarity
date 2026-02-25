@@ -62,7 +62,7 @@ export default {
         'elevated': 'var(--shadow-elevated)',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Space Grotesk', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       borderRadius: {

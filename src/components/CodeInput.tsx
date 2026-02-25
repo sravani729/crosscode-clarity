@@ -16,10 +16,10 @@ const LANGUAGES = [
 export const CodeInput = ({ code, onCodeChange, language, onLanguageChange }: CodeInputProps) => {
   return (
     <div className="space-y-4">
-      <div className="space-y-2">
-        <Label htmlFor="source-language" className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Source Language</Label>
+      <div className="space-y-1.5">
+        <Label htmlFor="source-language" className="text-[11px] font-bold text-muted-foreground uppercase tracking-widest">Language</Label>
         <Select value={language} onValueChange={onLanguageChange}>
-          <SelectTrigger id="source-language" className="bg-muted/40 border-border/60 h-10">
+          <SelectTrigger id="source-language" className="bg-muted/40 border-2 border-border h-10 rounded-xl font-medium">
             <SelectValue placeholder="Select language" />
           </SelectTrigger>
           <SelectContent>
@@ -29,15 +29,14 @@ export const CodeInput = ({ code, onCodeChange, language, onLanguageChange }: Co
           </SelectContent>
         </Select>
       </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="code-input" className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Code</Label>
+      <div className="space-y-1.5">
+        <Label htmlFor="code-input" className="text-[11px] font-bold text-muted-foreground uppercase tracking-widest">Your Code</Label>
         <Textarea
           id="code-input"
           value={code}
           onChange={(e) => onCodeChange(e.target.value)}
-          placeholder={`Enter your ${language} code here...`}
-          className="min-h-[320px] font-mono text-sm bg-code-bg border-code-border resize-none rounded-lg"
+          placeholder={`Paste your ${language} code here...`}
+          className="min-h-[280px] font-mono text-sm bg-code-bg border-2 border-code-border resize-none rounded-xl"
         />
       </div>
     </div>
