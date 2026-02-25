@@ -62,8 +62,8 @@ export default {
         'elevated': 'var(--shadow-elevated)',
       },
       fontFamily: {
-        sans: ['Roboto', 'Arial', 'sans-serif'],
-        mono: ['Roboto Mono', 'monospace'],
+        sans: ['Space Grotesk', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
       borderRadius: {
         lg: "var(--radius)",
