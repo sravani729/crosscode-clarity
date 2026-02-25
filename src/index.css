@@ -2,56 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 270 40% 98%;
-    --foreground: 260 30% 20%;
+    --background: 45 30% 96%;
+    --foreground: 230 25% 18%;
 
-    --card: 280 40% 97%;
-    --card-foreground: 260 30% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 230 25% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 260 30% 20%;
+    --popover-foreground: 230 25% 18%;
 
-    --primary: 270 60% 65%;
+    --primary: 250 75% 58%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 290 55% 72%;
+    --primary-glow: 280 65% 62%;
 
-    --secondary: 200 60% 92%;
-    --secondary-foreground: 210 40% 25%;
+    --secondary: 45 80% 72%;
+    --secondary-foreground: 35 60% 20%;
 
-    --muted: 330 40% 95%;
-    --muted-foreground: 260 15% 45%;
+    --muted: 40 20% 92%;
+    --muted-foreground: 230 10% 45%;
 
-    --accent: 170 50% 60%;
-    --accent-foreground: 170 50% 15%;
+    --accent: 340 72% 62%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 55% 65%;
+    --destructive: 0 65% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 260 30% 90%;
-    --input: 260 25% 88%;
-    --ring: 270 60% 65%;
+    --border: 230 15% 82%;
+    --input: 230 15% 86%;
+    --ring: 250 75% 58%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    --code-bg: 220 50% 96%;
-    --code-border: 220 40% 88%;
+    --code-bg: 230 25% 96%;
+    --code-border: 230 20% 86%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(270 60% 65%), hsl(330 60% 70%));
-    --gradient-secondary: linear-gradient(180deg, hsl(200 60% 95%), hsl(270 40% 97%));
-    
-    --shadow-glow: 0 0 40px hsl(270 60% 65% / 0.15);
-    --shadow-elevated: 0 10px 30px -10px hsl(270 40% 50% / 0.12);
+    --gradient-primary: linear-gradient(135deg, hsl(250 75% 58%), hsl(340 72% 62%));
+    --gradient-secondary: linear-gradient(180deg, hsl(45 30% 96%), hsl(40 25% 93%));
+
+    --shadow-glow: 0 0 30px hsl(250 75% 58% / 0.2);
+    --shadow-elevated: 0 8px 30px -8px hsl(230 30% 30% / 0.12);
   }
 }
 
 @layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
   * {
     @apply border-border;
@@ -59,7 +55,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   code, pre {
