@@ -1,7 +1,6 @@
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Code2 } from "lucide-react";
 
 interface CodeInputProps {
   code: string;
@@ -11,38 +10,16 @@ interface CodeInputProps {
 }
 
 const LANGUAGES = [
-  "Python",
-  "JavaScript",
-  "TypeScript",
-  "Java",
-  "C",
-  "C++",
-  "C#",
-  "Go",
-  "Rust",
-  "Ruby",
-  "PHP",
-  "Swift",
-  "Kotlin"
+  "Python", "JavaScript", "TypeScript", "Java", "C", "C++", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin"
 ];
 
 export const CodeInput = ({ code, onCodeChange, language, onLanguageChange }: CodeInputProps) => {
   return (
     <div className="space-y-4">
-      <div className="flex items-center gap-3 mb-6">
-        <div className="p-2 rounded-lg bg-primary/10">
-          <Code2 className="w-5 h-5 text-primary" />
-        </div>
-        <div>
-          <h2 className="text-xl font-semibold">Input Code</h2>
-          <p className="text-sm text-muted-foreground">Paste your code to analyze and translate</p>
-        </div>
-      </div>
-
       <div className="space-y-2">
-        <Label htmlFor="source-language">Source Language</Label>
+        <Label htmlFor="source-language" className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Source Language</Label>
         <Select value={language} onValueChange={onLanguageChange}>
-          <SelectTrigger id="source-language" className="bg-secondary border-border">
+          <SelectTrigger id="source-language" className="bg-muted/40 border-border/60 h-10">
             <SelectValue placeholder="Select language" />
           </SelectTrigger>
           <SelectContent>
@@ -54,13 +31,13 @@ export const CodeInput = ({ code, onCodeChange, language, onLanguageChange }: Co
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="code-input">Code</Label>
+        <Label htmlFor="code-input" className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Code</Label>
         <Textarea
           id="code-input"
           value={code}
           onChange={(e) => onCodeChange(e.target.value)}
           placeholder={`Enter your ${language} code here...`}
-          className="min-h-[400px] font-mono text-sm bg-code-bg border-code-border resize-none"
+          className="min-h-[320px] font-mono text-sm bg-code-bg border-code-border resize-none rounded-lg"
         />
       </div>
     </div>
