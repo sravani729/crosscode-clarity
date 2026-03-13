@@ -61,4 +61,10 @@
   code, pre {
     font-family: 'JetBrains Mono', monospace;
   }
+
+}
+@layer utilities {
+  .bg-secondary\/50 {
+    background-color: hsl(279deg 64.39% 78.3% / 50%);
+  }
 }
