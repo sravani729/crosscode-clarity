@@ -127,7 +127,7 @@ const Index = () => {
 
           {/* Right — Results */}
           <div>
-            <div className="rounded-2xl border-[3px] border-foreground/8 bg-card overflow-hidden shadow-elevated min-h-[540px] lg:sticky lg:top-24">
+            <div className="rounded-2xl border-[3px] border-foreground/8 bg-card overflow-hidden shadow-elevated min-h-[540px]">
               <div className="px-5 py-3 border-b-[3px] border-foreground/5 bg-secondary/30 flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-primary" />
                 <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Results</span>
