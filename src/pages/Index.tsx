@@ -147,7 +147,7 @@ const Index = () => {
                       
                       <h3 className="text-lg font-bold text-foreground">Ready to Analyze</h3>
                       <p className="text-xs text-muted-foreground leading-relaxed">
-                        Your AI-powered translations and complexity analysis will appear here.
+                        Your translations and complexity analysis will appear here.
                       </p>
                     </div>
                   </div>
